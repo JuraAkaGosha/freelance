@@ -1,0 +1,1 @@
+skillsPaper = Snap('#skills')

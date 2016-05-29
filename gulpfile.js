@@ -46,9 +46,10 @@ gulp.task('libs', function() {
         .pipe(gulp.dest('./builds/dist/css/'));
     gulp.src(bc + 'bootstrap/dist/**/*.*')
         .pipe(gulp.dest('./builds/dist/libs/bootstrap/'));
-
     gulp.src(bc + 'bootstrap-material-design/dist/**/*.*')
         .pipe(gulp.dest('./builds/dist/libs/bootstrap-material-design/'));
+    gulp.src(bc + 'Snap.svg/dist/snap.svg.js')
+        .pipe(gulp.dest('./builds/dist/libs/Snap/'));
 });
 gulp.task('webserver', function() {
     gulp.src('builds/dist/')

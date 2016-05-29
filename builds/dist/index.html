@@ -11,20 +11,48 @@
 <body>
 <div class="top_head">
     <div class="container">
-        <div class="menu">
+        <div class="top_head_menu">
             <ul>
-                <li><a href="#">about</a></li>
-                <li><a href="#">skills</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#skills">skills</a></li>
                 <li><a href="#">development</a></li>
                 <li><a href="#">contact</a></li>
             </ul>
         </div>
+        <div class="top_head_header col-md-8 col-sm-12">
+            <h1>quality means doing it right<br>when no one is looking.</h1>
+            <p>-Henry Ford</p>
+            <div class="top_head_header_button">
+                <a href="#about">Read more</a>
+            </div>
+        </div>
     </div>
+</div>
+<div class="about" id="about">
+    <div class="container">
+        <h2 class="block_header">About</h2>
+        <div class="photo col-md-2">
+            <img src="img/photo.png" alt="photo">
+        </div>
+        <h3 class="col-md-9">Hi there. My name is Yura. I am a young and perspective<br>
+            web developer. Welcome on my portfolio.<br>
+            <a href="#skills">Look</a> and enjoy.</h3>
+    </div>
+</div>
+<div class="skills" id="skills">
+    <div class="container">
+        <h2 class="block_header">Skills</h2>
+        <svg id="skills">
+        </svg>
+    </div>
+</div>
 </div>
 <!-- Others JS Files -->
 <script src="libs/jquery/jquery.js"></script>
 <script src="libs/bootstrap/js/bootstrap.js"></script>
 <script src="libs/bootstrap-material-design/js/material.js"></script>
 <script src="libs/bootstrap-material-design/js/ripples.js"></script>
+<script src="libs/Snap/snap.svg.js"></script>
+<script src="app/app.js"></script>
 </body>
 </html>
