@@ -6,7 +6,8 @@ var gulp = require('gulp'),
     webserver = require('gulp-webserver'),
     sass = require('gulp-sass'),
     concat = require('gulp-concat'),
-    csso = require('gulp-csso');
+    csso = require('gulp-csso'),
+    uglify = require('gulp-uglify');
 var bc = './bower_components/';
 gulp.task('js', function() {
     gulp.src('builds/development/app/**/*.js')
@@ -58,6 +59,11 @@ gulp.task('webserver', function() {
             open: true
         }));
 });
+// gulp.task('minify', function () {
+//     gulp.src('builds/development/app/app.js')
+//         .pipe(uglify())
+//         .pipe(gulp.dest('builds/dist/app/'));
+// });
 gulp.task('default', [
     'libs',
     'html',
