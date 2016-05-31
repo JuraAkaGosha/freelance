@@ -169,7 +169,7 @@ $(window).scroll(->
             fill:"#FF5E68"
           },500, mina.easeinout)
 #      ThirdShape
-    if ($(this).scrollTop() > $("#third").offset().top - 200)
+    if ($(this).scrollTop() > $("#third").offset().top - 100)
       if count == 2
         count = 3
         text3.animate({
@@ -199,7 +199,7 @@ $(window).scroll(->
         icon3.animate({
           fill:"#5ebdbd"
         },500, mina.easeinout)
-  if ($(this).scrollTop() > $("#four").offset().top - 200)
+  if ($(this).scrollTop() > $("#four").offset().top-300)
     if count == 3
       count = 4
       text5.animate({

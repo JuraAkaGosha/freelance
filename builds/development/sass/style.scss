@@ -120,4 +120,27 @@ body {
 .development{
   background-color: #edf9f7;
 }
+.contact{
+  background-color: #f4f9ff;
+  h3{
+    text-transform: uppercase;
+    text-align: center;
+    color: $color-head;
+    font-family: 'Roboto';
+  }
+  p{
+    color: $color-head;
+    text-transform: uppercase;
+    font-family: Roboto;
+    font-size: 1.875em;
+    span{
+      margin-left: 10%;
+      color: $color-agg;
+      margin-right: 32px;
+    }
+  }
+}
+.buttSend{
+  background-color: $color-agg;
+}
 

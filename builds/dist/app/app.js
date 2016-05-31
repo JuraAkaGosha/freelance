@@ -245,7 +245,7 @@ jQuery(document).ready(function() {
           }, 500, mina.easeinout);
         }
       }
-      if ($(this).scrollTop() > $("#third").offset().top - 200) {
+      if ($(this).scrollTop() > $("#third").offset().top - 100) {
         if (count === 2) {
           count = 3;
           text3.animate({
@@ -278,7 +278,7 @@ jQuery(document).ready(function() {
         }
       }
     }
-    if ($(this).scrollTop() > $("#four").offset().top - 200) {
+    if ($(this).scrollTop() > $("#four").offset().top - 300) {
       if (count === 3) {
         count = 4;
         text5.animate({
