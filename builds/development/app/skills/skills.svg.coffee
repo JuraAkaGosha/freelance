@@ -13,7 +13,7 @@ tContainer4 =skillsPaper.polygon "119.8,669 163.8,745.9 539.4,745.9 583.4,669 53
 tContainer=skillsPaper.g(tContainer1,tContainer2,tContainer3,tContainer4)
 tContainer.attr ({
   fill:"#FFFFFF"
-  stroke:"#505052"
+  stroke:"#fff"
   strokeMiterlimit:10
 })
 fShape = skillsPaper.polygon "563.7,90.1 607.6,167 700.7,167 744.6,90.1 700.7,13.2 607.6,13.2"
@@ -54,25 +54,38 @@ icon413 = skillsPaper.path "M178,586.3l-6.1,3.5c-0.6,0.3-0.8,1.1-0.5,1.7c0.2,0.4
 icon414 = skillsPaper.path "M209.7,556.8c0.2,0.1,0.4,0.2,0.6,0.2c0.4,0,0.9-0.2,1.1-0.6l3.5-6.1c0.3-0.6,0.1-1.4-0.5-1.7   c-0.6-0.3-1.4-0.1-1.7,0.5l-3.5,6.1C208.9,555.7,209.1,556.4,209.7,556.8L209.7,556.8z"
 icon1 = skillsPaper.g icon11, icon12, icon13, icon14, icon15, icon16, icon17, icon18, icon19, icon110, icon111, icon112, icon113, icon114, icon115
 icon4 = skillsPaper.g  icon41,icon42,icon43,icon44,icon45,icon46,icon47,icon48,icon49,icon410,icon411,icon412,icon413,icon414
-
-ftAttr= {
+fShape.attr({
   fill: '#fff'
-  stroke: '#76ADC2'
+  stroke: '#76adc2'
   strokeWidth: '3'
   strokeDasharray: 1000
   strokeDashoffset: 1000
-}
-sfoAttr={
+  id: 'first'
+})
+sShape.attr({
   fill: '#fff'
   stroke: '#FF5E68'
   strokeWidth: '3'
   strokeDasharray: 1000
   strokeDashoffset: 1000
-}
-fShape.attr(ftAttr)
-sShape.attr(sfoAttr)
-tShape.attr(ftAttr)
-foShape.attr(sfoAttr)
+  id: 'second'
+})
+tShape.attr({
+  fill: '#fff'
+  stroke: '#5ebdbd'
+  strokeWidth: '3'
+  strokeDasharray: 1000
+  strokeDashoffset: 1000
+  id: 'third'
+})
+foShape.attr({
+  fill: '#fff'
+  stroke: '#69afff'
+  strokeWidth: '3'
+  strokeDasharray: 1000
+  strokeDashoffset: 1000
+  id: 'four'
+})
 icon2 = skillsPaper.g icon21, icon22
 icon1.attr({
 fill:"#fff"
@@ -91,7 +104,7 @@ text1 = skillsPaper.text 350.9998, 180.6057, "HTML, CSS, PHP"
 text2 = skillsPaper.text 245.2, 345.7402, "JS, JQUERY, ANGULAR.JS"
 text3 = skillsPaper.text 300.9998, 490.7901, "RESPONSIVE DESIGN,"
 text4 = skillsPaper.text 300.9998, 518.7901, "BOOTSTRAP"
-text5 = skillsPaper.text 220.2, 689.5901, "PHOTOSHOP, ILUSTRATOR"
+text5 = skillsPaper.text 215.2, 689.5901, "PHOTOSHOP, ILLUSTRATOR"
 text = skillsPaper.g text1, text2, text3, text4, text5
 text.attr({
   'font-size': '2em'
@@ -103,74 +116,114 @@ text.attr({
   strokeDashoffset: 1000
 })
 $(window).scroll(->
-  if ($(this).scrollTop() > $("#skills").offset().top - 200)
+  if ($(this).scrollTop() > $("#first").offset().top - 200)
     if count == 0
       count = 1
-      text.animate({
+      text1.animate({
         strokeDashoffset: 0
         strokeWidth: 0
         fill: '#314a5b'
-      }, 1000, mina.easeinout())
-
+      }, 500, mina.easeinout())
+      tContainer1.animate({
+        stroke:"#505052"
+      },500, mina.easeinout())
 #      firstShape
       icon1.animate({
         fill:"#76ADC2"
       },500, mina.easeinout)
       fShape.animate({
         strokeDashoffset: 0
-      }, 1000, mina.easeinout,->
+      }, 500, mina.easeinout,->
         fShape.animate({
           strokeWidth: 0
           fill: '#76ADC2'
         }, 500, mina.easeout)
         icon1.animate({
           fill: "#fff"
-        },100,mina.easeout)
+        },50,mina.easeout)
       )
+    if ($(this).scrollTop() > $("#second").offset().top - 200)
+        if count == 1
+          count = 2
 #      secondShape
-      sShape.animate({
-        strokeDashoffset: 0
-      }, 1000, mina.easeinout,->
-        sShape.animate({
-          strokeWidth: 0
-          fill: '#FF5E68'
-        }, 500, mina.easeout)
-        icon2.animate({
-          fill: "#fff"
-        },100,mina.easeout)
-      )
-      icon2.animate({
-        fill:"#FF5E68"
-      },500, mina.easeinout)
+          text2.animate({
+            strokeDashoffset: 0
+            strokeWidth: 0
+            fill: '#314a5b'
+          }, 500, mina.easeinout())
+          tContainer2.animate({
+          stroke:"#505052"
+          },500, mina.easeinout())
+          sShape.animate({
+            strokeDashoffset: 0
+          }, 500, mina.easeinout,->
+            sShape.animate({
+              strokeWidth: 0
+              fill: '#FF5E68'
+            }, 500, mina.easeout)
+            icon2.animate({
+              fill: "#fff"
+            },100,mina.easeout)
+          )
+          icon2.animate({
+            fill:"#FF5E68"
+          },500, mina.easeinout)
 #      ThirdShape
-      tShape.animate({
-        strokeDashoffset: 0
-      }, 1000, mina.easeinout,->
-        tShape.animate({
+    if ($(this).scrollTop() > $("#third").offset().top - 200)
+      if count == 2
+        count = 3
+        text3.animate({
+          strokeDashoffset: 0
           strokeWidth: 0
-          fill: '#76ADC2'
-        }, 500, mina.easeout)
+          fill: '#314a5b'
+        }, 500, mina.easeinout())
+        text4.animate({
+          strokeDashoffset: 0
+          strokeWidth: 0
+          fill: '#314a5b'
+        }, 500, mina.easeinout())
+        tContainer3.animate({
+          stroke:"#505052"
+        },500, mina.easeinout())
+        tShape.animate({
+          strokeDashoffset: 0
+        }, 500, mina.easeinout,->
+          tShape.animate({
+            strokeWidth: 0
+            fill: '#5ebdbd'
+          }, 500, mina.easeout)
+          icon3.animate({
+            fill: "#fff"
+          },100,mina.easeout)
+        )
         icon3.animate({
-          fill: "#fff"
-        },100,mina.easeout)
-      )
-      icon3.animate({
-        fill:"#76ADC2"
-      },500, mina.easeinout)
+          fill:"#5ebdbd"
+        },500, mina.easeinout)
+  if ($(this).scrollTop() > $("#four").offset().top - 200)
+    if count == 3
+      count = 4
+      text5.animate({
+        strokeDashoffset: 0
+        strokeWidth: 0
+        fill: '#314a5b'
+      }, 500, mina.easeinout())
+      tContainer4.animate({
+        stroke:"#505052"
+      },500, mina.easeinout())
 #      FourShape
       foShape.animate({
         strokeDashoffset: 0
-      }, 1000, mina.easeinout,->
+      }, 500, mina.easeinout,->
         foShape.animate({
           strokeWidth: 0
-          fill: '#FF5E68'
+          fill: '#69afff'
         }, 500, mina.easeout)
         icon4.animate({
           fill: "#fff"
         },100,mina.easeout)
       )
       icon4.animate({
-        fill:"#FF5E68"
+        fill:"#69afff"
       },500, mina.easeinout)
 )
 
